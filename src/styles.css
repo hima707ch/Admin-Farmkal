@@ -1,0 +1,44 @@
+body{
+    background-color: #f0f2f5;;
+    font-family:"Graphik", Helvetica, sans-serif, Lucida Sans Unicode;
+}
+
+
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top : 0;
+    left : 0;
+    height : 3rem;
+    width : 100%;
+    background-color: #a7a2c1;
+    transition: all 0.6s;
+    z-index: 10;
+  }
+
+  .img1 {
+    width : 7.5rem;
+    transition: all 0.6s;
+    margin : auto;
+  }
+
+  .nav-container:hover{
+    .img1{
+      filter: invert(100%);
+    }
+    .nav-list > a >li  {
+      color : white
+    }
+  }
+
+  .nav-container:hover{
+    background-color:#201f26;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: row;
+  }
