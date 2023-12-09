@@ -6,7 +6,7 @@ import ListAltIcon from "@mui/icons-material/ListAlt";
 
 import { Link } from "react-router-dom";
 
-import './sidebar.css'
+import './styles/sidebar.css'
 
 
 const Sidebar = () => {

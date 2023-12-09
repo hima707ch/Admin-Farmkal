@@ -1,6 +1,7 @@
 import React from 'react'
-import './dashboard.css';
+import './styles/dashboard.css';
 import BasicTable from './BasicTable.tsx';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   return (
@@ -9,13 +10,17 @@ const Dashboard = () => {
         <h1> Dashboard </h1>  
 
         <div className='circle-cont'>
-            <div className='circle tomato'>
-                <p>Product <br/> 56 </p>
-            </div> 
+            <Link to = '/products'>
+                <div className='circle tomato'>
+                    <p>Product <br/> 56 </p>
+                </div> 
+            </Link>
 
-            <div className='circle'>
-                <p>Users <br/> 56 </p>
-            </div> 
+            <Link to="/users">
+                <div className='circle'>
+                    <p>Users <br/> 56 </p>
+                </div> 
+            </Link>
 
             <div className='circle grey'>
                 <p>Deals <br/> 56 </p>

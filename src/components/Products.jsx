@@ -6,7 +6,7 @@ const Products = () => {
     <div className='dashboard'>
         <h1>Products</h1>
 
-        <Table />
+        <Table route="products" />
 
     </div>
   )

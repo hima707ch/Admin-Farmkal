@@ -64,13 +64,14 @@
     justify-content: space-between;
 }
 
-.head{
-  font-size: 1.5rem;
-}
-
 span{
   margin-left: 0.6rem;
   color :rgb(91, 91, 91)
+}
+
+.head{
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .col1, .col2 {

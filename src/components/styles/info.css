@@ -1,0 +1,24 @@
+p, button{
+    margin-left: 3rem;
+}
+
+button{
+    border:  none;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    transition: all 0.6s;
+}
+
+button:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+.card{
+    margin-bottom: 1rem;
+    background-color: white;
+    padding: 2.5rem 4rem;
+    border-radius: 1rem;
+}

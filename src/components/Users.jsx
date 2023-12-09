@@ -6,7 +6,7 @@ const Users = () => {
     <div className='dashboard'>
     <h1>Users</h1>
 
-    <Table />
+    <Table route="users" />
 
 </div>
   )
