@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom';
 import './styles/info.css'
 import axios from 'axios';
 
+const Server = `https://cr5pww-4000.csb.app`;
+
 const ProductInfo = () => {
 
   const location = useLocation();
@@ -12,7 +14,7 @@ const ProductInfo = () => {
   const [seller, setSeller] = useState({});
 
   async function fetchSeller(){
-    const resp = await axios.get(`/api/v1/user/${product.seller}`)
+    const resp = await axios.get(`${Server}/api/v1/user/${product.seller}`)
     const user = resp.data.user;
     console.log(user);
     setSeller(user);
