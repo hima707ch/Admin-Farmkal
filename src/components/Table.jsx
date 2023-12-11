@@ -76,13 +76,18 @@ const UserColumns = [
     format: (value) => value.length.toLocaleString('en-US'),
   },
   {
+    id : 'city',
+    label : "City",
+    minWidth : 100,
+    align : "right",
+  },
+  {
     id: 'createdAt',
     label: 'Days',
     minWidth: 100,
     align: 'right',
     format: (value) => {
       let dif = Date.now() - Date(value);
-      console.log("dif", dif)
       return Math.floor(dif / (1000 * 60 * 60 * 24));
     },
   },
@@ -95,9 +100,11 @@ const UserColumns = [
   }
 ];
 
+const Server = `https://cr5pww-4000.csb.app`;
+
 export default function StickyHeadTable( props ) {
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(25);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [rows, setRows] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [columns, setColumns] = React.useState([]);
@@ -117,7 +124,19 @@ export default function StickyHeadTable( props ) {
   const fetchRows = async ()=>{
     
     if(props.route == "products"){
-      const resp = await axios.get(`/api/v1/${props.route}`);
+      let url = `${Server}/api/v1/${props.route}?`;
+
+      if(props.filter.city){
+        url = url + `city=${props.filter.city.toLowerCase()}`;
+      }
+
+      if(props.filter.category){
+        url = url+`category=${props.filter.category.toLowerCase()}`;
+      }
+
+      console.log("url", url)
+
+      const resp = await axios.get(url);
       setRows( resp.data.products ); 
       setColumns(ProductColumns);
       setInfoPage('/productInfo');
@@ -125,7 +144,15 @@ export default function StickyHeadTable( props ) {
 
     if(props.route == "users")
     {
-      const resp = await axios.get(`/api/v1/${props.route}?populate=sellItems`);
+      let url = `${Server}/api/v1/${props.route}?populate=sellItem&`;
+
+      if(props.filter.city){
+        url = url + `city=${props.filter.city.toLowerCase()}`;
+      }
+
+      console.log(url);
+
+      const resp = await axios.get(url);
       setRows( resp.data.users );
       setColumns(UserColumns);
       setInfoPage('/userInfo');
@@ -137,7 +164,7 @@ export default function StickyHeadTable( props ) {
 
   React.useEffect(()=>{
     fetchRows();
-  } , [])
+  } , [props.filter])
 
   return (
     

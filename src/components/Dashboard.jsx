@@ -2,32 +2,33 @@ import React from 'react'
 import './styles/dashboard.css';
 import BasicTable from './BasicTable.tsx';
 import { Link } from 'react-router-dom';
+import ShortNav from './ShortNav.jsx';
 
 const Dashboard = () => {
   return (
     <div className='dashboard'>
+
+        <ShortNav />
 
         <h1> Dashboard </h1>  
 
         <div className='circle-cont'>
             <Link to = '/products'>
                 <div className='circle tomato'>
-                    <p>Product <br/> 56 </p>
+                    <p className='dash-count'>Product <br/> 56 </p>
                 </div> 
             </Link>
 
             <Link to="/users">
                 <div className='circle'>
-                    <p>Users <br/> 56 </p>
+                    <p className='dash-count'>Users <br/> 56 </p>
                 </div> 
             </Link>
 
-            <div className='circle grey'>
-                <p>Deals <br/> 56 </p>
-            </div>
+            
 
-            <div className='circle grey'>
-                <p>Cities <br/> 56 </p>
+            <div className='circle yellow'>
+                <p className='dash-count'>Cities <br/> 56 </p>
             </div>    
                  
         </div>

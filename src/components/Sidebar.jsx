@@ -19,7 +19,7 @@ const Sidebar = () => {
             <Link to='/'>  <li> <DashboardIcon className='icon'/> Dashboard </li>  </Link>
             <Link to="/products">    <li> <ImportExportIcon className='icon'  /> Products </li> </Link>
             <Link to="/users">    <li> <PeopleIcon className='icon'  /> Users </li> </Link>
-            <Link to="/orders">   <li> <ListAltIcon className='icon'  /> Orders </li> </Link>
+            <Link to="/cites">   <li> <ListAltIcon className='icon'  /> Cities </li> </Link>
             </ul>
 </div>
         </div>
