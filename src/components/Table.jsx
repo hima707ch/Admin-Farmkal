@@ -127,7 +127,7 @@ export default function StickyHeadTable( props ) {
       let url = `${Server}/api/v1/${props.route}?`;
 
       if(props.filter.city){
-        url = url + `city=${props.filter.city.toLowerCase()}`;
+        url = url + `city=${props.filter.city.toLowerCase()}&`;
       }
 
       if(props.filter.category){
